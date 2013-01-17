@@ -1,0 +1,119 @@
+% Set of commands for a fancy resume / CV
+
+\usepackage[dvipsnames,usenames]{color}
+\usepackage{simplemargins}
+\usepackage{graphicx}
+\usepackage{pslatex}
+\usepackage{longtable}
+\usepackage{hyperref}
+\hypersetup{
+	pdfborder = {0 0 0},%
+    colorlinks,%
+    citecolor=black,%
+    filecolor=black,%
+    linkcolor=black,%
+    urlcolor=OliveGreen
+}
+\setleftmargin{1.5cm}
+\setrightmargin{2cm}
+\settopmargin{1.0cm}
+\setbottommargin{1.0cm}
+
+% starting commands
+
+\newcommand{\largeskip}[0]{\vspace{2.5mm}\\}
+\newcommand{\shortskip}[0]{\vspace{0.4mm}\\}
+
+\setlength{\parindent}{0mm}
+\pagestyle{empty}
+
+% small caps
+\newcommand{\smcp}[1]{ #1}
+
+%%%%%%%%%%
+% Header for name, address, etc.
+\newcommand{\header}[3]{
+\hspace{0cm}
+\begin{tabular}{p{11cm}p{6cm}}
+{\raggedright {\headline {#1}}
+\\\vspace*{2mm}
+\large #2} 
+& 
+\raggedleft{#3}
+\end{tabular}}
+
+\newcommand{\headline}[1]{\LARGE #1}
+
+%%%%%%%%%%
+% Blue horizontal rule for statement of purpose (see below)
+\newcommand{\blocktitle}[1]{
+\parbox{\textwidth}{
+	\vspace{2mm}
+	\noindent
+	\textcolor{MidnightBlue}{
+%{\fontencoding{OT1}\fontfamily{ppl}\fontsize{16} #1
+{\Large #1
+	\vspace*{1mm}
+	\hrule}
+	\vspace*{3mm}
+	\noindent
+} } }
+
+%%%%%%%%%%%%%
+% Section layouts
+
+%%%%%%
+% Statement of purpose
+\newenvironment{statementblock}[1]
+{\blocktitle{#1}\begin{tabular}{p{\textwidth}}}
+{\end{tabular}}
+
+%%%%%%
+% Resume items in two column table (education, skills, etc)
+\newenvironment{resumeblock}[1]
+{\blocktitle{#1}\begin{tabular}{p{4.6cm}p{12.9cm}}}
+{\end{tabular}}
+\newcommand{\resumeitem}[2]{\noindent\raggedright{\textsc{#1}} & #2}
+
+%%%%%%
+% Resume items in single column table (publications, activities, etc.)
+\newenvironment{resumeblockb}[1]{\blocktitle{#1}\begin{itemize}}
+{\end{itemize}}
+\newcommand{\resumeitemb}[2]{\item {\textit{#1}}#2}
+
+%%%%%%
+% Talk and paper notations
+
+\newenvironment{pubblock}[1]{\blocktitle{#1}\begin{itemize}}
+{\end{itemize}}
+
+% Abstract
+\newcommand{\pubitema}[2]{\renewcommand{\labelitemi}{\textcolor{OliveGreen}{\tiny{\textsc{Abstract}}}} \item {\textit{#1}}#2}
+
+% Talk
+\newcommand{\pubitemt}[2]{\renewcommand{\labelitemi}{\textcolor{BlueViolet}{\tiny{\textsc{Talk}}}} \item {\textit{#1}}#2}
+
+% Invited Talk
+\newcommand{\pubitemi}[2]{\renewcommand{\labelitemi}{\textcolor{BrickRed}{\tiny{\textsc{Inivited Talk}}}} \item {\textit{#1}}#2}
+
+% Conference proceeding
+\newcommand{\pubitemp}[2]{\renewcommand{\labelitemi}{\textcolor{Purple}{\tiny{\textsc{Proceedings}}}} \item {\textit{#1}}#2}
+
+% Journal paper
+\newcommand{\pubitemj}[2]{\renewcommand{\labelitemi}{\textcolor{RawSienna}{\tiny{\textsc{Journal Article}}}} \item {\textit{#1}}#2}
+
+% Misc paper
+\newcommand{\pubitemx}[2]{\renewcommand{\labelitemi}{\textcolor{RawSienna}{\tiny{\textsc{Article}}}} \item {\textit{#1}}#2}
+
+%%%%%%%
+% Skill experience level graphics
+
+\newcommand{\experiencemost}[0]{
+\includegraphics[height=14pt]{bar-full1.pdf}}
+
+\newcommand{\experiencemid}[0]{
+\includegraphics[height=14pt]{bar-half1.pdf}}
+
+\newcommand{\experiencelow}[0]{
+\includegraphics[height=14pt]{bar-quart1.pdf}}
+
