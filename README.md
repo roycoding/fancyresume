@@ -6,6 +6,8 @@ It has a reasonable layout with special features to allow you to denote your rel
 
 See the example resume PDF.
 
+See the cv-commands.tex file for dependencies.
+
 This is free for anyone to use without restriction.
 
 Roy Keyes
