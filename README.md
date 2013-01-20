@@ -4,7 +4,7 @@ _Everyone needs a nice, fancy LaTeX resume template!_
 
 This one has a reasonable layout with special features I've added:
 
-* Small "meter" graphics, reminiscent of sparklines, allow you to denote your relative level of experience / skill when listing items such as programming languages.
+* "Sparkmeter" graphics, reminiscent of sparklines, allow you to denote your relative level of experience / skill when listing items such as programming languages.
 * Colored tags to denote talks and publications as articles, abstracts, invited talks, etc.
 
 See the example resume PDF for your viewing pleasure and the cv-commands.tex file for dependencies.
